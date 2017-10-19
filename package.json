@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "rimraf ./dist && babel -d ./dist ./src -s && node ./dist/main.js",
-    "dev": "node dev.js"
+    "dev": "node dev.js",
+    "lint-staged": "lint-staged"
   },
   "devDependencies": {
     "eslint": "4.8.0",
@@ -24,6 +25,13 @@
     "babel-preset-env": "^1.6.0",
     "babel-register": "^6.26.0",
     "rimraf": "^2.6.2"
+  },
+  "pre-commit": {
+    "run": "lint-staged",
+    "silent": true
+  },
+  "lint-staged": {
+    "*.js": "eslint"
   },
   "eslintConfig": {
     "root": true,
