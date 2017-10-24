@@ -8,7 +8,8 @@
   "scripts": {
     "start": "rimraf ./dist && babel -d ./dist ./src -s && node ./dist/main.js",
     "dev": "node dev.js",
-    "lint-staged": "lint-staged"
+    "lint:js": "eslint ./src",
+    "precommit": "eslint ./src"
   },
   "devDependencies": {
     "eslint": "^4.9.0",
@@ -16,8 +17,10 @@
     "eslint-config-prettier": "^2.6.0",
     "eslint-plugin-import": "^2.7.0",
     "husky": "^0.14.3",
-    "lint-staged": "^4.2.3",
-    "pre-commit": "^1.2.2"
+    "lint-staged": "^4.3.0"
+  },
+  "lint-staged": {
+    "*.js": "eslint"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
@@ -25,13 +28,6 @@
     "babel-preset-env": "^1.6.0",
     "babel-register": "^6.26.0",
     "rimraf": "^2.6.2"
-  },
-  "pre-commit": {
-    "run": "lint-staged",
-    "silent": true
-  },
-  "lint-staged": {
-    "*.js": "eslint"
   },
   "eslintConfig": {
     "root": true,
