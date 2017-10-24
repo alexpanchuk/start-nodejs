@@ -3,5 +3,4 @@
 #### Dependencies:
 - eslint
 - babel
-- pre-commit
-- lint-staged
+- husky
