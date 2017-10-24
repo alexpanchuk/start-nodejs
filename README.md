@@ -1,6 +1,6 @@
 ### NodeJS project template
 
-#### Dependencies
+#### Dependencies:
 - eslint
 - babel
 - pre-commit
